@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E45FB4604873D8B6C7EA06B0 /* Pods_SmartKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3D10A9FAEB39D66878B43 /* Pods_SmartKey.framework */; };
+		FB4E730E23B42366001E9CC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB4E730D23B42366001E9CC1 /* GoogleService-Info.plist */; };
 		FB53EBAA23B409D700FA5094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBA923B409D700FA5094 /* AppDelegate.swift */; };
 		FB53EBAC23B409D700FA5094 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBAB23B409D700FA5094 /* SceneDelegate.swift */; };
 		FB53EBAE23B409D700FA5094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBAD23B409D700FA5094 /* ViewController.swift */; };
 		FB53EBB123B409D700FA5094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB53EBAF23B409D700FA5094 /* Main.storyboard */; };
 		FB53EBB323B409D900FA5094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB53EBB223B409D900FA5094 /* Assets.xcassets */; };
 		FB53EBB623B409D900FA5094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB53EBB423B409D900FA5094 /* LaunchScreen.storyboard */; };
+		FB53EBBE23B40A3500FA5094 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBBD23B40A3500FA5094 /* SignUpViewController.swift */; };
+		FB53EBC023B40A4100FA5094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */; };
+		FB53EBC223B40A5200FA5094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBC123B40A5200FA5094 /* HomeViewController.swift */; };
+		FBF1891123B4EDAD00A4E731 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF1891023B4EDAD00A4E731 /* Door.swift */; };
+		FBF1891323B4F36200A4E731 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF1891223B4F36200A4E731 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CA3D10A9FAEB39D66878B43 /* Pods_SmartKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7BFC6E4DCDF9FD9F3C2388F /* Pods-SmartKey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKey.debug.xcconfig"; path = "Target Support Files/Pods-SmartKey/Pods-SmartKey.debug.xcconfig"; sourceTree = "<group>"; };
+		EC0828BE90E83DA4566F8FDE /* Pods-SmartKey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKey.release.xcconfig"; path = "Target Support Files/Pods-SmartKey/Pods-SmartKey.release.xcconfig"; sourceTree = "<group>"; };
+		FB4E730D23B42366001E9CC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB53EBA623B409D700FA5094 /* SmartKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB53EBA923B409D700FA5094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB53EBAB23B409D700FA5094 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,11 @@
 		FB53EBB223B409D900FA5094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB53EBB523B409D900FA5094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB53EBB723B409D900FA5094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB53EBBD23B40A3500FA5094 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FB53EBC123B40A5200FA5094 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FBF1891023B4EDAD00A4E731 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+		FBF1891223B4F36200A4E731 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45FB4604873D8B6C7EA06B0 /* Pods_SmartKey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE5A38D189272C9B8D738F4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7BFC6E4DCDF9FD9F3C2388F /* Pods-SmartKey.debug.xcconfig */,
+				EC0828BE90E83DA4566F8FDE /* Pods-SmartKey.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FB53EB9D23B409D600FA5094 = {
 			isa = PBXGroup;
 			children = (
 				FB53EBA823B409D700FA5094 /* SmartKey */,
 				FB53EBA723B409D700FA5094 /* Products */,
+				DE5A38D189272C9B8D738F4A /* Pods */,
+				FCE6A9183D489014535C6A67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +84,45 @@
 		FB53EBA823B409D700FA5094 /* SmartKey */ = {
 			isa = PBXGroup;
 			children = (
+				FBF1890F23B4EB4100A4E731 /* Models */,
+				FB53EBC323B40A5600FA5094 /* View Controllers */,
 				FB53EBA923B409D700FA5094 /* AppDelegate.swift */,
 				FB53EBAB23B409D700FA5094 /* SceneDelegate.swift */,
-				FB53EBAD23B409D700FA5094 /* ViewController.swift */,
 				FB53EBAF23B409D700FA5094 /* Main.storyboard */,
 				FB53EBB223B409D900FA5094 /* Assets.xcassets */,
 				FB53EBB423B409D900FA5094 /* LaunchScreen.storyboard */,
+				FB4E730D23B42366001E9CC1 /* GoogleService-Info.plist */,
 				FB53EBB723B409D900FA5094 /* Info.plist */,
 			);
 			path = SmartKey;
+			sourceTree = "<group>";
+		};
+		FB53EBC323B40A5600FA5094 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB53EBAD23B409D700FA5094 /* ViewController.swift */,
+				FB53EBBD23B40A3500FA5094 /* SignUpViewController.swift */,
+				FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */,
+				FB53EBC123B40A5200FA5094 /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FBF1890F23B4EB4100A4E731 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBF1891023B4EDAD00A4E731 /* Door.swift */,
+				FBF1891223B4F36200A4E731 /* HomeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE6A9183D489014535C6A67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CA3D10A9FAEB39D66878B43 /* Pods_SmartKey.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB53EBBA23B409D900FA5094 /* Build configuration list for PBXNativeTarget "SmartKey" */;
 			buildPhases = (
+				374D1CEED01100F0C0F61C65 /* [CP] Check Pods Manifest.lock */,
 				FB53EBA223B409D700FA5094 /* Sources */,
 				FB53EBA323B409D700FA5094 /* Frameworks */,
 				FB53EBA423B409D700FA5094 /* Resources */,
+				3BD820C7F8414F92E30C9746 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +186,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB53EBB623B409D900FA5094 /* LaunchScreen.storyboard in Resources */,
+				FB4E730E23B42366001E9CC1 /* GoogleService-Info.plist in Resources */,
 				FB53EBB323B409D900FA5094 /* Assets.xcassets in Resources */,
 				FB53EBB123B409D700FA5094 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		374D1CEED01100F0C0F61C65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartKey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BD820C7F8414F92E30C9746 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartKey/Pods-SmartKey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartKey/Pods-SmartKey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartKey/Pods-SmartKey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB53EBA223B409D700FA5094 /* Sources */ = {
@@ -140,7 +243,12 @@
 			files = (
 				FB53EBAE23B409D700FA5094 /* ViewController.swift in Sources */,
 				FB53EBAA23B409D700FA5094 /* AppDelegate.swift in Sources */,
+				FBF1891123B4EDAD00A4E731 /* Door.swift in Sources */,
+				FB53EBBE23B40A3500FA5094 /* SignUpViewController.swift in Sources */,
+				FBF1891323B4F36200A4E731 /* HomeModel.swift in Sources */,
+				FB53EBC023B40A4100FA5094 /* LoginViewController.swift in Sources */,
 				FB53EBAC23B409D700FA5094 /* SceneDelegate.swift in Sources */,
+				FB53EBC223B40A5200FA5094 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +390,7 @@
 		};
 		FB53EBBB23B409D900FA5094 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7BFC6E4DCDF9FD9F3C2388F /* Pods-SmartKey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +409,7 @@
 		};
 		FB53EBBC23B409D900FA5094 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC0828BE90E83DA4566F8FDE /* Pods-SmartKey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
