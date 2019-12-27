@@ -20,20 +20,19 @@ class HomeModel {
         ref.observe(.value, with: { (snapshot) in
             
             var doorListDummy : [Door] = []
-            print(snapshot.value)
         
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
-                    let door = Door(snapshot: snapshot){
-                    print("Hola carlos y dayron")
-                    doorListDummy.append(door)
+                    let door = Door(snapshot: snapshot) {
+                    if door.users.contains(self.uid) {
+                        doorListDummy.append(door)
+                    }
                 }
-                print("Holaa")
             }
             
             self.size = doorListDummy.count
             self.doorList = doorListDummy
-            print(self.doorList)
+
             completion(false,self.doorList)
                     
         })
