@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
         
         // Do any additional setup after loading the view.
         checkLocationServices()
@@ -52,6 +53,7 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             // Do Map Stuff
+            print("<<<<<<< .authorizedWhenInUse >>>>>>>>")
             mapView.showsUserLocation = true
             centerViewOnUserLocation()
             locationManager.startUpdatingLocation()
@@ -59,14 +61,19 @@ class MapViewController: UIViewController {
             break
         case .denied:
             // Show alert instructing them how to turn on permissions
+            print("<<<<<<< .denied >>>>>>>>")
+            Alert.showBasicAlert(on: self, with: "Denied permissions", message: "Please, give permission to this app to access the location.")
             break
         case .notDetermined:
+            print("<<<<<<< .notDetermined >>>>>>>>")
             locationManager.requestWhenInUseAuthorization()
             break
         case .restricted:
             // Show an alert letting them know what's up
+            print("<<<<<<< .restricted >>>>>>>>")
             break
         case .authorizedAlways:
+            print("<<<<<<< .authorizedAlways >>>>>>>>")
             break
         }
     }

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     
-    
     // Variables
     let homeModel = HomeModel()
     var doorList: [Door] = []
@@ -60,6 +59,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
         
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
@@ -94,6 +94,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goMap" {
             let destination = segue.destination as! MapViewController
+            destination.doorList = self.doorList
+        } else if segue.identifier == "goNFC" {
+            let destination = segue.destination as! NFCViewController
             destination.doorList = self.doorList
         }
     }

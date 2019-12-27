@@ -20,6 +20,7 @@
 		FB53EBC023B40A4100FA5094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */; };
 		FB53EBC223B40A5200FA5094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EBC123B40A5200FA5094 /* HomeViewController.swift */; };
 		FB6C03B823B637BA00CD1BB4 /* NFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6C03B723B637BA00CD1BB4 /* NFCViewController.swift */; };
+		FBEE4F5223B6666800C02DC9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE4F5123B6666800C02DC9 /* Alert.swift */; };
 		FBF1891123B4EDAD00A4E731 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF1891023B4EDAD00A4E731 /* Door.swift */; };
 		FBF1891323B4F36200A4E731 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF1891223B4F36200A4E731 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB53EBC123B40A5200FA5094 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB6C03B723B637BA00CD1BB4 /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
+		FBEE4F5123B6666800C02DC9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FBF1891023B4EDAD00A4E731 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		FBF1891223B4F36200A4E731 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 		FB53EBA823B409D700FA5094 /* SmartKey */ = {
 			isa = PBXGroup;
 			children = (
+				FBEE4F5323B670EB00C02DC9 /* Alert */,
 				FBF1890F23B4EB4100A4E731 /* Models */,
 				FB53EBC323B40A5600FA5094 /* View Controllers */,
 				FB53EBA923B409D700FA5094 /* AppDelegate.swift */,
@@ -112,6 +115,14 @@
 				FB6C03B723B637BA00CD1BB4 /* NFCViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FBEE4F5323B670EB00C02DC9 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE4F5123B6666800C02DC9 /* Alert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		FBF1890F23B4EB4100A4E731 /* Models */ = {
@@ -255,6 +266,7 @@
 				FB1C863423B6194400826378 /* MapViewController.swift in Sources */,
 				FBF1891323B4F36200A4E731 /* HomeModel.swift in Sources */,
 				FB53EBC023B40A4100FA5094 /* LoginViewController.swift in Sources */,
+				FBEE4F5223B6666800C02DC9 /* Alert.swift in Sources */,
 				FB53EBAC23B409D700FA5094 /* SceneDelegate.swift in Sources */,
 				FB53EBC223B40A5200FA5094 /* HomeViewController.swift in Sources */,
 			);

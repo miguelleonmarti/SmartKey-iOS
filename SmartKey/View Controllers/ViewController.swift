@@ -16,7 +16,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
+        
         // Do any additional setup after loading the view.
+        
+        if (Auth.auth().currentUser != nil) {
+            DispatchQueue.main.async {
+                self.transitionToHome()
+            }
+        }
+    }
+    
+    func transitionToHome() {
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? UINavigationController
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
     }
 
 }

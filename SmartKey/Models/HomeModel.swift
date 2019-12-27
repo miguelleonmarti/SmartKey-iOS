@@ -11,16 +11,19 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class HomeModel {
+    
+    // Variables and constants
     var doorList: [Door] = []
     var size: Int?
     var uid: String = Auth.auth().currentUser!.uid
+    let ref = Database.database().reference().child("doors")
     
     func fillArray(completion: @escaping (Bool, [Door]) -> Void){
-        let ref = Database.database().reference().child("doors")
+        
         ref.observe(.value, with: { (snapshot) in
             
             var doorListDummy : [Door] = []
-        
+            
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let door = Door(snapshot: snapshot) {
@@ -32,10 +35,13 @@ class HomeModel {
             
             self.size = doorListDummy.count
             self.doorList = doorListDummy
-
+            
             completion(false,self.doorList)
-                    
+            
         })
+    }
     
+    func setDoorState(doorIdentifier: Int) {
+        ref.child(String(doorIdentifier)).child("open").setValue(true)
     }
 }

@@ -10,25 +10,22 @@ import UIKit
 import CoreNFC
 
 class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
-
+    
     private var session: NFCNDEFReaderSession?
     let tagSlot: Int = 5 // Tag slot where door identifier is saved
+    var doorList: [Door]?
+    let homeModel = HomeModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        overrideUserInterfaceStyle = .dark
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func nfcTapped(_ sender: UIButton) {
         guard NFCNDEFReaderSession.readingAvailable else {
-            let alertController = UIAlertController(
-                title: "Scanning Not Supported",
-                message: "This device doesn't support tag scanning.",
-                preferredStyle: .alert
-            )
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+            Alert.showBasicAlert(on: self, with: "Scanning not supported", message: "This device does not support tag scanning.")
             return
         }
         
@@ -45,14 +42,25 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     // Called when a new set of NDEF messages is found
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         print("New NFC Tag detected:")
-        
+        var doorIdentifier: Int?
         for message in messages {
             for record in message.records {
                 let payload = (String(data: record.payload, encoding: .utf8)!)
                 let text = payload.dropFirst(tagSlot)
                 print("Door Identifier (payload): \(text)")
+                doorIdentifier = Int(text)
             }
         }
+        
+        if doorList!.contains(where: { door in door.id == 1 }) {
+            // User can open/close the door
+            homeModel.setDoorState(doorIdentifier: doorIdentifier!)
+        } else {
+            // Show alert (user does not have permissions to open/close the door)
+            Alert.showBasicAlert(on: self, with: "Cannot open/close the door", message: "You do not have enough permissions.")
+        }
+        
+        
     }
     
     
