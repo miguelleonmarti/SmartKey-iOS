@@ -7,24 +7,54 @@
 //
 
 import UIKit
+import CoreNFC
 
-class NFCViewController: UIViewController {
+class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
 
+    private var session: NFCNDEFReaderSession?
+    let tagSlot: Int = 5 // Tag slot where door identifier is saved
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func nfcTapped(_ sender: UIButton) {
+        guard NFCNDEFReaderSession.readingAvailable else {
+            let alertController = UIAlertController(
+                title: "Scanning Not Supported",
+                message: "This device doesn't support tag scanning.",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+        self.session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+        self.session?.begin()
     }
-    */
-
+    
+    // Called when the reader-session expired, you invalidated the dialog or accessed an invalidated session
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        print("Error reading NFC: \(error.localizedDescription)")
+    }
+    
+    // Called when a new set of NDEF messages is found
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        print("New NFC Tag detected:")
+        
+        for message in messages {
+            for record in message.records {
+                let payload = (String(data: record.payload, encoding: .utf8)!)
+                let text = payload.dropFirst(tagSlot)
+                print("Door Identifier (payload): \(text)")
+            }
+        }
+    }
+    
+    
+    
 }

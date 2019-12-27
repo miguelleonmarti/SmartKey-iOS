@@ -92,15 +92,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let destination = segue.destination as! MapViewController
-        destination.doorList = self.doorList
-        
-        
-        /*if segue.identifier == "irDetalle" {
-            let view = segue.destination as! DetalleViewController
-            view.texto = "Hola"
-        }*/
+        if segue.identifier == "goMap" {
+            let destination = segue.destination as! MapViewController
+            destination.doorList = self.doorList
+        }
     }
         
 }
