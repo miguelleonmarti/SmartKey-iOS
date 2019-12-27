@@ -90,10 +90,10 @@
 		FB53EBA823B409D700FA5094 /* SmartKey */ = {
 			isa = PBXGroup;
 			children = (
-				FBEE4F5323B670EB00C02DC9 /* Alert */,
 				FBF1890F23B4EB4100A4E731 /* Models */,
 				FB53EBC323B40A5600FA5094 /* View Controllers */,
 				FB53EBA923B409D700FA5094 /* AppDelegate.swift */,
+				FBEE4F5123B6666800C02DC9 /* Alert.swift */,
 				FB53EBAB23B409D700FA5094 /* SceneDelegate.swift */,
 				FB53EBAF23B409D700FA5094 /* Main.storyboard */,
 				FB53EBB223B409D900FA5094 /* Assets.xcassets */,
@@ -115,14 +115,6 @@
 				FB6C03B723B637BA00CD1BB4 /* NFCViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		FBEE4F5323B670EB00C02DC9 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				FBEE4F5123B6666800C02DC9 /* Alert.swift */,
-			);
-			path = Alert;
 			sourceTree = "<group>";
 		};
 		FBF1890F23B4EB4100A4E731 /* Models */ = {
