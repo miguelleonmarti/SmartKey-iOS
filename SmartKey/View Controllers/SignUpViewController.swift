@@ -29,6 +29,8 @@ class SignUpViewController: UIViewController {
         setUpElements()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {self.view.endEditing(true)}
+    
     func setUpElements() {
         self.errorLabel.alpha = 0
     }
