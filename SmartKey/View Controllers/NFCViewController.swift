@@ -52,7 +52,7 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             }
         }
         
-        if doorList!.contains(where: { door in door.id == 1 }) {
+        if doorList!.contains(where: { door in door.id == doorIdentifier }) {
             // User can open/close the door
             homeModel.setDoorState(doorIdentifier: doorIdentifier!)
         } else {
