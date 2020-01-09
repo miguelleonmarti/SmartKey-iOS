@@ -16,13 +16,38 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     var doorList: [Door]?
     let homeModel = HomeModel()
     
+    func completionHandler(doorState: Bool) -> Void {
+        DispatchQueue.main.async {
+            let message: String!
+            if(doorState) {
+                message = "OPEN"
+                self.label.textColor = UIColor.green
+            } else {
+                message = "CLOSED"
+                self.label.textColor = UIColor.red
+            }
+            self.label.text = message
+            self.label.isHidden = false
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.label.isHidden = true
+        }
+        
+    }
+    
+    
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         
         // Do any additional setup after loading the view.
+        self.label.isHidden = true
     }
     
+    // When nfc button tapped we read nfc tag, which represents the door
     @IBAction func nfcTapped(_ sender: UIButton) {
         guard NFCNDEFReaderSession.readingAvailable else {
             Alert.showBasicAlert(on: self, with: "Scanning not supported", message: "This device does not support tag scanning.")
@@ -30,7 +55,7 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         }
         
         self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
-        self.session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+        self.session?.alertMessage = "Hold your iPhone near the door to open/close it."
         self.session?.begin()
     }
     
@@ -41,7 +66,6 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     // Called when a new set of NDEF messages is found
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        //doorList = []
         print("New NFC Tag detected:")
         var doorIdentifier: Int?
         for message in messages {
@@ -54,20 +78,21 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             }
         }
         
+        // After reading the nfc tag, the nfc session is closed
         self.session?.invalidate()
         self.session = nil
         
+        // Check if the current door identifier read from the nfc tag allows to the user
+        // If does not it will not change its state and an error message will appear
         if (doorList?.contains(where: { door in door.id == doorIdentifier }))! {
             // User can open/close the door
-            homeModel.setDoorState(doorIdentifier: doorIdentifier!)
+            homeModel.setDoorState(doorIdentifier: doorIdentifier!, completion: completionHandler)
         } else {
             // Show alert (user does not have permissions to open/close the door)
-            Alert.showBasicAlert(on: self, with: "Cannot open/close the door", message: "You do not have enough permissions.")
+            DispatchQueue.main.async {
+                Alert.showBasicAlert(on: self, with: "Cannot open/close the door", message: "You do not have enough permissions.")
+            }
         }
-        
-        
     }
-    
-    
-    
+
 }
