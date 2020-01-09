@@ -43,6 +43,7 @@
 		FB53EBBF23B40A4100FA5094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB53EBC123B40A5200FA5094 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB6C03B723B637BA00CD1BB4 /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
+		FB7D1A8A23C492FF00EC9379 /* SmartKey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartKey.entitlements; sourceTree = "<group>"; };
 		FBEE4F5123B6666800C02DC9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FBF1891023B4EDAD00A4E731 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		FBF1891223B4F36200A4E731 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		FB53EBA823B409D700FA5094 /* SmartKey */ = {
 			isa = PBXGroup;
 			children = (
+				FB7D1A8A23C492FF00EC9379 /* SmartKey.entitlements */,
 				FBF1890F23B4EB4100A4E731 /* Models */,
 				FB53EBC323B40A5600FA5094 /* View Controllers */,
 				FB53EBA923B409D700FA5094 /* AppDelegate.swift */,
@@ -405,15 +407,19 @@
 			baseConfigurationReference = E7BFC6E4DCDF9FD9F3C2388F /* Pods-SmartKey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartKey/SmartKey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JL9BMU6F97;
+				DEVELOPMENT_TEAM = 5A3738RLQU;
 				INFOPLIST_FILE = SmartKey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.ulpgc.miguelleonmarti.SmartKey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelleonmarti.SmartKey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,15 +430,19 @@
 			baseConfigurationReference = EC0828BE90E83DA4566F8FDE /* Pods-SmartKey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartKey/SmartKey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JL9BMU6F97;
+				DEVELOPMENT_TEAM = 5A3738RLQU;
 				INFOPLIST_FILE = SmartKey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.ulpgc.miguelleonmarti.SmartKey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelleonmarti.SmartKey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -12,7 +12,7 @@ import CoreNFC
 class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     private var session: NFCNDEFReaderSession?
-    let tagSlot: Int = 5 // Tag slot where door identifier is saved
+    let tagSlot: Int = 1 // Tag slot where door identifier is saved
     var doorList: [Door]?
     let homeModel = HomeModel()
     
@@ -41,18 +41,23 @@ class NFCViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     // Called when a new set of NDEF messages is found
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        //doorList = []
         print("New NFC Tag detected:")
         var doorIdentifier: Int?
         for message in messages {
             for record in message.records {
                 let payload = (String(data: record.payload, encoding: .utf8)!)
                 let text = payload.dropFirst(tagSlot)
-                print("Door Identifier (payload): \(text)")
-                doorIdentifier = Int(text)
+                print("Door Identifier (payload): \(text.dropFirst(2))")
+                doorIdentifier = Int(text.dropFirst(2))
+                print(doorIdentifier!)
             }
         }
         
-        if doorList!.contains(where: { door in door.id == doorIdentifier }) {
+        self.session?.invalidate()
+        self.session = nil
+        
+        if (doorList?.contains(where: { door in door.id == doorIdentifier }))! {
             // User can open/close the door
             homeModel.setDoorState(doorIdentifier: doorIdentifier!)
         } else {

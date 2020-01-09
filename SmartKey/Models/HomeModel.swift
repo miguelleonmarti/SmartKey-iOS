@@ -42,6 +42,10 @@ class HomeModel {
     }
     
     func setDoorState(doorIdentifier: Int) {
-        ref.child(String(doorIdentifier)).child("open").setValue(true)
+        ref.child(String(doorIdentifier)).child("open").observeSingleEvent(of: .value) { (snapshot) in
+            let isOpen = snapshot.value as? Bool
+            self.ref.child(String(doorIdentifier)).child("open").setValue(!isOpen!) // Gracias senielDev
+        }
+        
     }
 }
