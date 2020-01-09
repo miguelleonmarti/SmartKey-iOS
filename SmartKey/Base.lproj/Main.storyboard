@@ -328,7 +328,7 @@
             </objects>
             <point key="canvasLocation" x="3727.5362318840585" y="125.89285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--NFC-->
         <scene sceneID="srV-ch-vMW">
             <objects>
                 <viewController id="6UH-t5-BqW" customClass="NFCViewController" customModule="SmartKey" customModuleProvider="target" sceneMemberID="viewController">
@@ -371,7 +371,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KHs-wR-ZUo"/>
                     </view>
-                    <navigationItem key="navigationItem" id="i8C-hR-X9d"/>
+                    <navigationItem key="navigationItem" title="NFC" id="i8C-hR-X9d"/>
                     <connections>
                         <outlet property="label" destination="fe2-NU-akN" id="twk-4v-tx4"/>
                     </connections>
@@ -380,7 +380,7 @@
             </objects>
             <point key="canvasLocation" x="4639.1999999999998" y="-209.14542728635683"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Maps-->
         <scene sceneID="k94-Yf-vve">
             <objects>
                 <viewController id="5rF-dA-2Xl" customClass="MapViewController" customModule="SmartKey" customModuleProvider="target" sceneMemberID="viewController">
@@ -404,7 +404,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIz-qL-q3d"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aGR-xs-gix"/>
+                    <navigationItem key="navigationItem" title="Maps" id="aGR-xs-gix"/>
                     <connections>
                         <outlet property="mapView" destination="PKD-od-JOx" id="wQY-Kj-aWw"/>
                     </connections>
